@@ -1,0 +1,64 @@
+body {
+    background-color: #1e2022;
+    padding: 10px;;
+  }
+
+.logo-stars {
+  padding: 10px; 
+  border-style: solid;
+  border-bottom-color: #DCE0DF; 
+  border-bottom-width: 1px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+.star, .logostar {
+  height: 45px;
+}
+
+.btn-buscar {
+  border-color: #FA7322;
+  color: #FA7322;
+}
+
+.btn-buscar:hover {
+  background: #FA7322;
+  color: black;
+}
+
+#carouselExampleIndicators {
+  padding: 20px;
+  text-align: center;
+  width: 70%;
+}
+
+h2 {
+  color: #FA7322;
+}
+
+.sec-lomejor {
+  padding: 10px;;
+}
+
+.card-lomejor {
+  width: 18rem; 
+  background-color: #DCE0DF;
+}
+
+.icon-redes {
+  width: 30%;
+}
+
+.sec-redes {
+  padding: 10px;;
+}
+
+.h5-redes {
+  padding: 10px;
+  color: #FA7322;
+}
+
+.sec-patrocinadores {
+  padding: 10px;
+}
