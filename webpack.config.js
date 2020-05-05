@@ -15,14 +15,25 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules'],
-    alias: { vue: 'vue/dist/vue.esm.js' }
+    alias: { vue: 'vue/dist/vue.esm.js' },
+    extensions: [".ts", ".vue", ".js"]
   },
   module: {
     rules: [
       // ... other rules
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        use: [
+          'vue-loader',
+        ]
+      },
+      {
+        test: /\.ts?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+            appendTsSuffixTo: [/\.vue$/]
+        }
       },
       {
         test: /\.css$/,
