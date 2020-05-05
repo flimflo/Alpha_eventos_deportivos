@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: {
     components: './src/components/index.js',
-    'admin-app': './src/admin-app/index.js',
+    'admin-app': './src/admin-app/index.ts',
   },
   output: {
     filename: '[name].bundle.js',
