@@ -28,30 +28,70 @@ button {
 
 <template>
 <div class="card">
+  <select v-model="selectedSection">
+  <option v-for="item in sections" :key="item">
+    {{ item }}
+  </option>
+</select>
+  <div v-if="showApproveToolbar">
+    <span>deseas aprobar este comentario?</span>
+    <button v-on:click="onApproveClicked"> Si </button>
+    <button v-on:click="onClearSelectionClicked"> No </button>
+  </div>
+  <div v-if="showApproveSuccess">Comentario aprobado con exito</div>
+  <ul>
+    <li v-for="item in comments" :key="item.id" v-on:click="onCommentSelected(item.id)">
+      {{ item.content }} asdfasdf
+    </li>
+  </ul>
 
 </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Vue, Component, Watch } from 'vue-property-decorator'
 import { CommentReviewerVM } from './comment-reviewer-vm'
-export default {
-  data: function () {
-    return {
-      loading: false,
-      error: false,
-      password: '',
-      email: '',
-    }
-  },
-  created: function() {
-    this.vm = new CommentReviewerVM()
+import { CommentReviewerUiState } from './comment-reviewer-ui-state'
+
+interface Data {
+  sections: string[]
+  selectedSection: string
+}
+
+@Component
+export default class extends Vue implements CommentReviewerUiState, Data {
+  private vm = new CommentReviewerVM()
+
+  comments = []
+  loading = false
+  error = false
+  showApproveToolbar = false
+  showApproveSuccess = false
+
+  sections = ["Menu", "Tabla"]
+  selectedSection = ""
+
+
+  created() {
     this.vm.uiState.subscribe(uiState => Object.assign(this, uiState))
-  },
-  methods: {
-    login: function() {
-      this.vm.login({ email: this.email, password: this.password })
-    },
-  },
+  }
+
+  @Watch("selectedSection")
+  onSectionSelected(section: string) {
+    this.vm.loadCommentsForSection(section)
+  }
+
+  onCommentSelected(commentId) {
+    this.vm.commentSelected(commentId)
+  }
+
+  onApproveClicked() {
+    this.vm.deleteCommentClicked()
+  }
+
+  onClearSelectionClicked() {
+    this.vm.commentDeletionCanceled()
+  }
 }
 </script>
 

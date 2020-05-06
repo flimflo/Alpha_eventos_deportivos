@@ -1,4 +1,4 @@
-interface TeamData {
+export interface TeamData {
   teamName: string,
   goalsAgainst: number,
   goalsScored: number,

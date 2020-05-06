@@ -3,13 +3,6 @@ import { BehaviorSubject } from "rxjs"
 import { updateLeaderboard } from "../../api"
 
 export class LeaderBoardVM {
-  static initialState: LeaderBoardUiState= {
-    table: [],
-    loading: false,
-    error:  false,
-    showSuccess: false,
-  }
-
   uiState = new BehaviorSubject<LeaderBoardUiState>(LeaderBoardVM.initialState)
 
   appendTeam(teamName: string, goalsAgainst: number, goalsScored: number, points: number) {
@@ -26,7 +19,7 @@ export class LeaderBoardVM {
   submit() {
     this.ui({ loading: true, error: false, showSuccess: false })
 
-    updateLeaderboard()
+    updateLeaderboard(this.currentState.table)
       .then(() => this.ui({ showSuccess: true, loading: false}))
       .catch(() => this.ui({ error: true, loading: false }))
 
@@ -37,5 +30,12 @@ export class LeaderBoardVM {
 
   get currentState() {
     return this.uiState.value
+  }
+
+  static initialState: LeaderBoardUiState = {
+    table: [],
+    loading: false,
+    error:  false,
+    showSuccess: false,
   }
 }

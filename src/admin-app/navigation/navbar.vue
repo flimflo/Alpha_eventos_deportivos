@@ -1,0 +1,51 @@
+<style scoped>
+#header {
+  padding: 8px;
+}
+
+form {
+  display: flex;
+  border: 1px solid #d2d0d0;
+  width: 500px;
+  border-radius: 8px;
+  height: 40px;
+  overflow: hidden;
+}
+.card {
+  box-shadow: 1px 2px 4px #d2d2d2;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+input {
+  padding: 8px;
+  border-radius: 2px;
+  border: none;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment {
+  padding: 12px;
+  border-bottom: 1px solid #d2d0d0;
+}
+
+button {
+  padding: 8px;
+  border: none;
+  background-color: red;
+  width: 100px;
+}
+</style>
+
+<template>
+<div class="card">
+  <router-link to="/comments">Revisar comentarios</router-link>
+  <router-link to="/leaderboard">Tabla de posiciones</router-link>
+</div>
+</template>

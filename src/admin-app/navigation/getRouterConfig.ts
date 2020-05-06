@@ -3,7 +3,7 @@ import {
   Auth,
   CommentReviewer,
   LeaderboardTable
-} from '../sections/';
+} from '../sections';
 
 export function getRouterConfig() {
   const authenticatedRoutes: RouteConfig[] = [
