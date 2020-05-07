@@ -9,7 +9,7 @@
     "@vue/compiler-sfc": "^3.0.0-beta.4",
     "axios": "^0.19.2",
     "css-loader": "^3.5.3",
-    "moment": "^2.25.1",
+    "moment": "2.24.0",
     "rxjs": "6.5.5",
     "ts-loader": "^7.0.2",
     "typescript": "^3.8.3",

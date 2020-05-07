@@ -1,6 +1,7 @@
 import {BehaviorSubject} from 'rxjs'
 import { getAllComments, setCommentApproval } from '../../../api'
-import { CommentReviewerUiState, CommentItem } from './comment-reviewer-ui-state'
+import { CommentReviewerUiState } from './comment-reviewer-ui-state'
+import { CommentItem } from '../../../models/CommentItem'
 
 export class CommentReviewerVM {
   uiState = new BehaviorSubject<CommentReviewerUiState>({

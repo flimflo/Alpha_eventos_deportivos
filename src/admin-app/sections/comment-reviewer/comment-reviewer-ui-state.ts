@@ -1,8 +1,4 @@
-export interface CommentItem {
-  content: string,
-  id: string,
-  publishedAt: string,
-}
+import { CommentItem } from "../../../models/CommentItem";
 
 export interface CommentReviewerUiState {
   comments: CommentItem[],

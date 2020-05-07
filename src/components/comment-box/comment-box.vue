@@ -55,7 +55,7 @@ button {
       class="comment"
       v-for="comment in comments"
       :key="comment.content">
-      <span>{{ comment.date }}</span>: {{ comment.content }}
+      <span>{{ comment.publishedAt }}</span>: {{ comment.content }}
     </li>
   </ul>
 </div>
@@ -64,7 +64,7 @@ button {
 <script>
 import { CommentStore } from './CommentStore'
 export default {
-  props: ['commentClusterId'],
+  props: ['sectionId'],
   data: function () {
     return {
       comments: [],
@@ -72,14 +72,15 @@ export default {
     }
   },
   created: function() {
-    this.commentStore = new CommentStore(this.commentClusterId)
+    this.commentStore = new CommentStore()
+    this.commentStore.getComments(this.sectionId)
     this.commentStore.comments.subscribe((comments) => {
       this.comments = comments
     })
   },
   methods: {
     submit: function() {
-      this.commentStore.postComment({ content: this.message })
+      this.commentStore.postComment(this.message)
     },
   },
 }

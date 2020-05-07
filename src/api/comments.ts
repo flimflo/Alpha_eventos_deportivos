@@ -1,7 +1,9 @@
 import { axiosInstance } from './axiosInstance'
 
-export function postComment(section: string) {
-  return axiosInstance.post(`/comments/${section}`)
+export function postComment(section: string, content: string) {
+  return axiosInstance.post(`/comments/${section}`, {
+    content
+  })
 }
 
 type Comment = {
@@ -12,8 +14,8 @@ type Comment = {
   creation_date: string
 }
 
-export function getComments(section: string) {
-  return axiosInstance.get<Comment[]>(`/comments/${section}`)
+export async function getComments(section: string) {
+  return (await axiosInstance.get<Comment[]>(`/comments/${section}`)).data
 }
 
 export function getAllComments(section: string) {

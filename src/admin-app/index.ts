@@ -28,13 +28,16 @@ new Vue<DataType>({
       this.authStatus = status
       this.showNavbar = status === AuthStatus.AUTHORIZED
 
-      console.log(status === AuthStatus.AUTHORIZED)
       if (status === AuthStatus.UNAUTHORIZED) {
         router.push('/auth')
       }
+
+      if (status === AuthStatus.AUTHORIZED && router.currentRoute.path === '/auth') {
+        router.push('/comments')
+      }
     })
 
-    router.beforeEach((to, from, next) => {
+    router.beforeResolve((to, from, next) => {
       if (this.authStatus !== AuthStatus.AUTHORIZED && config.pathIsAuthGuarded(to.path)) {
         next('/auth')
       } else {
