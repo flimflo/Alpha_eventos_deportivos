@@ -9,7 +9,7 @@ export class LeaderBoardVM {
     this.currentState.table.push({
       teamName,
       goalsAgainst,
-      goalsScored,
+      goals: goalsScored,
       points,
     })
 

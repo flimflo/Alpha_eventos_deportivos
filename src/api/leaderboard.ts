@@ -1,11 +1,10 @@
-import { delay } from "./auth";
-import { TeamData } from "../admin-app/sections/leaderboard-table/leaderboard-table-ui-state";
+import { TeamData } from "../models/TeamData";
+import { axiosInstance } from "./axiosInstance";
 
 export function getLeaderboard() {
-  return Promise.resolve([])
+  return axiosInstance.get<TeamData[]>('/leaderboard/table').then(d => d.data)
 }
 
-export async function updateLeaderboard(teams: TeamData[]) {
-  await delay(1000);
-  return Promise.resolve()
+export function updateLeaderboard(teams: TeamData[]) {
+  return axiosInstance.post('/leaderboard/table', teams)
 }

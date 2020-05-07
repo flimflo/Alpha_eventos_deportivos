@@ -10,14 +10,14 @@
     <tr v-for="item in table" :key="item.teamName">
       <td>{{ item.teamName }}</td>
       <td>{{ item.goalsAgainst }}</td>
-      <td>{{ item.goalsScored }}</td>
+      <td>{{ item.goals }}</td>
       <td>{{ item.points }}</td>
     </tr>
   </table>
   <form v-on:submit.prevent="appendTeam">
     <input type="text" v-model="teamName">
     <input type="number" v-model="goalsAgainst">
-    <input type="number" v-model="goalsScored">
+    <input type="number" v-model="goals">
     <input type="number" v-model="points">
     <button>Agregar</button>
   </form>
@@ -34,7 +34,7 @@ import { LeaderBoardUiState } from './leaderboard-table-ui-state'
 type LeaderBoardForm = {
   teamName: string,
   goalsAgainst: number,
-  goalsScored: number,
+  goals: number,
   points: number
 }
 
@@ -44,7 +44,7 @@ export default class extends Vue implements LeaderBoardForm, LeaderBoardUiState 
 
   teamName = ""
   goalsAgainst = 0
-  goalsScored = 0
+  goals = 0
   points = 0
 
   table = []
@@ -58,7 +58,7 @@ export default class extends Vue implements LeaderBoardForm, LeaderBoardUiState 
 
   appendTeam() {
     this.vm.appendTeam(
-      this.teamName, this.goalsAgainst, this.goalsScored, this.points)
+      this.teamName, this.goalsAgainst, this.goals, this.points)
   }
 
   submit() {

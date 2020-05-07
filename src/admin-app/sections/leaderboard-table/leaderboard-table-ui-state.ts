@@ -1,9 +1,4 @@
-export interface TeamData {
-  teamName: string,
-  goalsAgainst: number,
-  goalsScored: number,
-  points: number
-}
+import { TeamData } from "../../../models/TeamData";
 
 export interface LeaderBoardUiState {
   table: TeamData[]
