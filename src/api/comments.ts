@@ -5,7 +5,7 @@ export function postComment(section: string) {
 }
 
 type Comment = {
-  id: string
+  _id: string
   approved: boolean,
   content: string,
   section: string,

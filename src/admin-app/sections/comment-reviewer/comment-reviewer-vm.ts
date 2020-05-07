@@ -23,7 +23,7 @@ export class CommentReviewerVM {
         const comments: CommentItem[] = response.data.map(c => ({
           content: c.content,
           publishedAt: c.creation_date,
-          id: c.id,
+          id: c._id,
         }))
 
         this.ui({ comments, loading: false })
