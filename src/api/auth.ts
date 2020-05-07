@@ -1,12 +1,10 @@
-export function delay(t: number) {
-  return new Promise(function(resolve) {
-      setTimeout(resolve.bind(null), t)
-  });
+import { axiosInstance } from "./axiosInstance";
+
+interface LoginResponse {
+  token: string
 }
 
-export async function login({ user, password }) {
-  await delay(1000);
-  return ({
-    token: 'password12345',
-  });
+export function login(email: string, password: string) {
+  return axiosInstance.post<LoginResponse>('/auth', { email, password })
+    .then(res => res.data.token)
 }

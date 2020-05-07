@@ -37,12 +37,18 @@ export class AuthService {
     }
   }
 
-  login =  async ({ user, password }) => {
-    const { token } = await login({ user, password })
-    Storage.authToken = token
+  login = async ({ user, password }) => {
+    try {
+      const token = await login(user, password)
+      console.log(token)
+      Storage.authToken = token
 
-    this._authStatus.next(AuthStatus.AUTHORIZED)
-    this._authToken.next(token)
+      this._authStatus.next(AuthStatus.AUTHORIZED)
+      this._authToken.next(token)
+    } catch {
+      this._authStatus.next(AuthStatus.UNAUTHORIZED)
+      throw new Error() // cambiar
+    }
   }
 
   logout = () => {
