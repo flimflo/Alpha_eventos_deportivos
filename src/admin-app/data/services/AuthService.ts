@@ -1,31 +1,5 @@
 import { BehaviorSubject, Observable } from "rxjs";
-import { login } from "../../api";
-
-export enum AuthStatus {
-  AUTHORIZED,
-  UNAUTHORIZED,
-  UNDEFINED,
-}
-
-export class AuthService {
-  private _authStatus = new BehaviorSubject<AuthStatus>(AuthStatus.UNDEFINED)
-  authStatus: Observable<AuthStatus> = this._authStatus
-
-  login =  async ({ user, password }) => {
-    const { token } = await login({ user, password })
-    Storage.authToken = token
-
-    this._authStatus.next(AuthStatus.AUTHORIZED)
-    return
-  }
-
-  logout = () => {
-   Storage.clear()
-   this._authStatus.next(AuthStatus.UNAUTHORIZED)
-  }
-
-  static default = new AuthService()
-}
+import { login } from "../../../api";
 
 const Storage = {
   get authToken (): string|null {
@@ -40,4 +14,41 @@ const Storage = {
   Keys: {
     TOKEN: 'token'
   }
+}
+
+export enum AuthStatus {
+  AUTHORIZED,
+  UNAUTHORIZED,
+  UNDEFINED,
+}
+
+export class AuthService {
+  private _authStatus = new BehaviorSubject<AuthStatus>(AuthStatus.UNDEFINED)
+  private _authToken = new BehaviorSubject<string|null>(null)
+  authStatus: Observable<AuthStatus> = this._authStatus
+  authToken: Observable<string|null> = this._authToken
+
+  constructor() {
+    if (Storage.authToken) {
+      this._authStatus.next(AuthStatus.AUTHORIZED)
+      this._authToken.next(Storage.authToken)
+    } else {
+      this._authStatus.next(AuthStatus.UNAUTHORIZED)
+    }
+  }
+
+  login =  async ({ user, password }) => {
+    const { token } = await login({ user, password })
+    Storage.authToken = token
+
+    this._authStatus.next(AuthStatus.AUTHORIZED)
+    this._authToken.next(token)
+  }
+
+  logout = () => {
+   Storage.clear()
+   this._authStatus.next(AuthStatus.UNAUTHORIZED)
+  }
+
+  static default = new AuthService()
 }

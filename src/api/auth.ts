@@ -7,6 +7,6 @@ export function delay(t: number) {
 export async function login({ user, password }) {
   await delay(1000);
   return ({
-    token: 'asdfasfd',
+    token: 'password12345',
   });
 }

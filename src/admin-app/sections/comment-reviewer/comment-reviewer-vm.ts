@@ -1,6 +1,6 @@
 import {BehaviorSubject} from 'rxjs'
-import { getComments, deleteComment } from '../../api'
-import { CommentReviewerUiState } from './comment-reviewer-ui-state'
+import { getAllComments, setCommentApproval } from '../../../api'
+import { CommentReviewerUiState, CommentItem } from './comment-reviewer-ui-state'
 
 export class CommentReviewerVM {
   uiState = new BehaviorSubject<CommentReviewerUiState>({
@@ -12,14 +12,20 @@ export class CommentReviewerVM {
   })
 
   private selectedCommentId: string|null = null
-  private selectedSection: string=""
+  private selectedSection: string = ""
 
   loadCommentsForSection(section: string) {
     this.selectedSection = section
     this.ui({ error: false, loading: false })
 
-    getComments(section)
-      .then(comments => {
+    getAllComments(section)
+      .then(response => {
+        const comments: CommentItem[] = response.data.map(c => ({
+          content: c.content,
+          publishedAt: c.creation_date,
+          id: c.id,
+        }))
+
         this.ui({ comments, loading: false })
       })
       .catch(() => this.ui({ error: true, loading: false }))
@@ -38,7 +44,7 @@ export class CommentReviewerVM {
   deleteCommentClicked() {
     this.ui({ error: false, loading: false})
 
-    deleteComment(this.selectedCommentId!!)
+    setCommentApproval(this.selectedCommentId!!, true)
       .then(() => this.ui({ showApproveSuccess: true, loading: false, showApproveToolbar: false }))
       .then(() => this.loadCommentsForSection(this.selectedSection))
       .catch(() => this.ui({ error: true, loading: false }))

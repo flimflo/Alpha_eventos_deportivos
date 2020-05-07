@@ -68,7 +68,7 @@ export default class extends Vue implements CommentReviewerUiState, Data {
   showApproveToolbar = false
   showApproveSuccess = false
 
-  sections = ["Menu", "Tabla"]
+  sections = ["menu", "tabla"]
   selectedSection = ""
 
 

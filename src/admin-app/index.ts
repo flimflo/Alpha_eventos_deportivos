@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import { AuthStatus, AuthService } from './data/services/AuthService'
 import { getRouterConfig } from './navigation/getRouterConfig'
 import NavBar from './navigation/navbar.vue'
+import './bootstraper'
 
 Vue.use(VueRouter)
 
@@ -25,20 +26,21 @@ new Vue<DataType>({
   created: function() {
     AuthService.default.authStatus.subscribe(status => {
       this.authStatus = status
-      // this.showNavbar = status === AuthStatus.AUTHORIZED
+      this.showNavbar = status === AuthStatus.AUTHORIZED
 
-      // if (status === AuthStatus.UNAUTHORIZED || status === AuthStatus.UNDEFINED) {
-      //   router.push('/auth')
-      // }
+      console.log(status === AuthStatus.AUTHORIZED)
+      if (status === AuthStatus.UNAUTHORIZED) {
+        router.push('/auth')
+      }
     })
 
-    // router.beforeEach((to, from, next) => {
-    //   if (this.authStatus !== AuthStatus.AUTHORIZED && config.pathIsAuthGuarded(to.path)) {
-    //     next('/auth')
-    //   } else {
-    //     next()
-    //   }
-    // })
+    router.beforeEach((to, from, next) => {
+      if (this.authStatus !== AuthStatus.AUTHORIZED && config.pathIsAuthGuarded(to.path)) {
+        next('/auth')
+      } else {
+        next()
+      }
+    })
   },
   template: `
   <div>

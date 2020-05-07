@@ -1,24 +1,25 @@
-import { CommentItem } from '../sections/comment-reviewer/comment-reviewer-ui-state'
+import { axiosInstance } from './axiosInstance'
 
-//GET COMMENTS USERS endpoint: http://localhost:8080/comments/:section
-//POST COMMENTS USERS endpoint: http://localhost:8080/comments/:section
-//GET COMMENTS ADMIN endpoint: http://localhost:8080/commentsAdmin/:section
-//UPDATE COMMENTS ADMIN endpoint: http://localhost:8080/commentsAdmin/:id
-//DELETE COMMENTS ADMIN endpoint: http://localhost:8080/commentsAdmin/:id
-export async function getComments(section: string) {
-  const comments: CommentItem[] = [{
-    content: 'asdf',
-    id: '1',
-    publishedAt: 'ayer'
-  }]
-
-  return comments
+export function postComment(section: string) {
+  return axiosInstance.post(`/comments/${section}`)
 }
 
-export function postComment() {
-  return Promise.resolve()
+type Comment = {
+  id: string
+  approved: boolean,
+  content: string,
+  section: string,
+  creation_date: string
 }
 
-export function deleteComment(commentId: string) {
-  return Promise.resolve()
+export function getComments(section: string) {
+  return axiosInstance.get<Comment[]>(`/comments/${section}`)
+}
+
+export function getAllComments(section: string) {
+  return axiosInstance.get<Comment[]>(`/comments/Admin/${section}`)
+}
+
+export function setCommentApproval(commentId: string, approved: boolean) {
+  return axiosInstance.patch(`/comments/Admin/${commentId}`)
 }

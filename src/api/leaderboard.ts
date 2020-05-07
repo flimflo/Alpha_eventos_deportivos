@@ -1,5 +1,5 @@
 import { delay } from "./auth";
-import { TeamData } from "../sections/leaderboard-table/leaderboard-table-ui-state";
+import { TeamData } from "../admin-app/sections/leaderboard-table/leaderboard-table-ui-state";
 
 export function getLeaderboard() {
   return Promise.resolve([])
