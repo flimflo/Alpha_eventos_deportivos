@@ -1,0 +1,113 @@
+body {
+    background-color: #1e2022;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+.logo-stars {
+  padding: 10px; 
+  border-style: solid;
+  border-bottom-color: #DCE0DF; 
+  border-bottom-width: 1px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+.star, .logostar {
+  height: 45px;
+}
+
+.btn-buscar {
+  border-color: #FA7322;
+  color: #FA7322;
+}
+
+.btn-buscar:hover {
+  background: #FA7322;
+  color: black;
+}
+
+h2, h1, h4 {
+  text-align: center;
+  color: #FA7322;
+}
+
+h5 {
+  color: #DCE0DF;
+}
+
+p {
+  color: white;
+}
+
+h6 {
+  text-align: center;
+  color: white;
+}
+
+.bd-example {
+  position: relative;
+  padding: 1rem;
+  margin: 1rem -15px 0;
+  border: solid #f8f9fa;
+  border-width: .2rem 0 0;
+  width: 100%;
+  margin: 0px;
+}
+
+div {
+  display: block;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+.col-4 {
+  /*-ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;*/
+  -ms-flex: 0 0 40%;
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.col-8 {
+  /*-ms-flex: 0 0 66.666667%;
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;*/
+  -ms-flex: 0 0 60%;
+  flex: 0 0 60%;
+  max-width: 60%;
+}
+
+.scrollspy-example-2 {
+  position: relative;
+  /*height: 350px;*/
+  height: 500px;
+  overflow: auto;
+}
+
+.nav-pills>a, .nav-pills>a:focus, .nav-pills>a:hover {
+  color: black;
+}
+
+/*.nav-link.active, .nav-link:focus, .nav-link:hover {
+  color: green !important;
+  background-color: green;
+}*/
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: black;
+  background-color: #FA7322;
+}
