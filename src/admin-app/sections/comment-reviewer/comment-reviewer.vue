@@ -4,8 +4,11 @@
 }
 
 .card {
-  box-shadow: 1px 2px 4px #d2d2d2;
-  border-radius: 8px;
+  background-color: #FFFFFF;
+  max-width: 800px;
+  margin: 32px 24px;
+  box-shadow: 1px 2px 4px #383838;
+  border-radius: 2px;
   overflow: hidden;
 }
 
@@ -24,24 +27,82 @@ button {
   background-color: red;
   width: 100px;
 }
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment {
+  padding: 8px;
+  transition: background-color .1s ease-in;
+  cursor: pointer;
+}
+
+.comment:hover {
+  background-color: #efefef;
+}
+
+#toolbar {
+  background-color: #263238;
+  display: flex;
+  justify-content: flex-end;
+  height: 48px;
+}
+
+#approval-buttons {
+  flex: 1 0 auto;
+}
+
+#modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000061;
+}
+
+#modal {
+  position: relative;
+  background-color: #FFFFFF;
+  max-width: 400px;
+  margin: 32px 24px;
+  padding: 30px;
+  box-shadow: 1px 2px 4px #383838;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
 </style>
 
 <template>
 <div class="card">
-  <select v-model="selectedSection">
-  <option v-for="item in sections" :key="item">
-    {{ item }}
-  </option>
-</select>
-  <div v-if="showApproveToolbar">
-    <span>deseas aprobar este comentario?</span>
-    <button v-on:click="onApproveClicked"> Si </button>
-    <button v-on:click="onClearSelectionClicked"> No </button>
+  <div id="modal-overlay"  v-if="showApproveToolbar">
+       <div id="modal">
+          <p>deseas aprobar este comentario?</p>
+          <button v-on:click="onApproveClicked"> Si </button>
+          <button v-on:click="onClearSelectionClicked"> No </button>
+        </div>
   </div>
+  <div id="toolbar">
+    <select v-model="selectedSection">
+      <option v-for="item in sections" :key="item">
+        {{ item }}
+      </option>
+    </select>
+  </div>
+
   <div v-if="showApproveSuccess">Comentario aprobado con exito</div>
-  <ul>
-    <li v-for="item in comments" :key="item.id" v-on:click="onCommentSelected(item.id)">
-      {{ item.content }} asdfasdf
+  <ul class="comment-list">
+    <li class="comment"
+      v-for="item in comments"
+      :key="item.id"
+      v-on:click="onCommentSelected(item.id)">
+      <span>{{ item.publishedAt }}: {{ item.content }}</span>
     </li>
   </ul>
 

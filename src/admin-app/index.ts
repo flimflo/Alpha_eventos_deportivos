@@ -8,7 +8,7 @@ import './bootstraper'
 Vue.use(VueRouter)
 
 const config = getRouterConfig()
-const router = new VueRouter({ routes: config.allRoutes, mode: 'history' })
+const router = new VueRouter({ routes: config.allRoutes, mode: 'hash' })
 
 type DataType = {
   authStatus: AuthStatus,
@@ -46,11 +46,11 @@ new Vue<DataType>({
     })
   },
   template: `
-  <div>
+  <div id="app">
     <NavBar v-if="showNavbar"/>
     <router-view></router-view>
   </div>
   `,
    router,
-   components: { NavBar }
+   components: { NavBar },
 })

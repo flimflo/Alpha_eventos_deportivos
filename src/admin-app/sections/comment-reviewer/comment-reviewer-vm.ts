@@ -2,6 +2,7 @@ import {BehaviorSubject} from 'rxjs'
 import { getAllComments, setCommentApproval } from '../../../api'
 import { CommentReviewerUiState } from './comment-reviewer-ui-state'
 import { CommentItem } from '../../../models/CommentItem'
+import * as moment from 'moment'
 
 export class CommentReviewerVM {
   uiState = new BehaviorSubject<CommentReviewerUiState>({
@@ -23,8 +24,9 @@ export class CommentReviewerVM {
       .then(response => {
         const comments: CommentItem[] = response.data.map(c => ({
           content: c.content,
-          publishedAt: c.creation_date,
+          publishedAt: moment(c.creation_date).locale('es').fromNow(),
           id: c._id,
+          approved: c.approved,
         }))
 
         this.ui({ comments, loading: false })

@@ -9,7 +9,8 @@ const Storage = {
     localStorage.setItem(this.Keys.TOKEN, token!!)
   },
   clear() {
-    Object.keys(this.Keys).forEach(k => localStorage.removeItem(k))
+    console.log(Object.values(this.Keys))
+    Object.values(this.Keys).forEach(k => localStorage.removeItem(k))
   },
   Keys: {
     TOKEN: 'token'
