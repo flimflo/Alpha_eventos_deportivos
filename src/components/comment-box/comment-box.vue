@@ -12,9 +12,10 @@ form {
   overflow: hidden;
 }
 .card {
-  box-shadow: 1px 2px 4px #d2d2d2;
-  border-radius: 8px;
+  box-shadow: 1px 2px 4px #6b6b6b;
+  border-radius: 4px;
   overflow: hidden;
+  padding: 12px;
 }
 
 input {
@@ -45,7 +46,7 @@ button {
 
 <template>
 <div class="card">
-  <h1 id="header">Comentarios</h1>
+  <h3 id="header">Comentarios</h3>
   <form v-on:submit.prevent="submit">
     <input v-model="message" placeholder="Nuevo Comentario">
     <button>Enviar</button>
