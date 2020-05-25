@@ -15,6 +15,7 @@ export class CommentStore {
         content: d.content,
         publishedAt: moment(d.creation_date).locale('es').fromNow(),
         id: d._id,
+        approved: false,
     })))
   }
 

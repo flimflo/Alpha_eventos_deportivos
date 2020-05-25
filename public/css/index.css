@@ -1,12 +1,12 @@
 body {
-    background-color: #1e2022;
-    padding: 10px;;
+  box-sizing: border-box;
+    /* font-family: 'Roboto Slab'; */
   }
 
 .logo-stars {
-  padding: 10px; 
+  padding: 10px;
   border-style: solid;
-  border-bottom-color: #DCE0DF; 
+  border-bottom-color: #DCE0DF;
   border-bottom-width: 1px;
   border-top-width: 0px;
   border-left-width: 0px;
@@ -27,23 +27,22 @@ body {
   color: black;
 }
 
-#carouselExampleIndicators {
-  padding: 20px;
-  text-align: center;
-  width: 70%;
-}
-
-h2 {
-  color: #FA7322;
-}
 
 .sec-lomejor {
-  padding: 10px;;
+  background-color: #FA7322;
+  padding-bottom: 64px;
+}
+.sec-lomejor h2{
+  color: #FFFFFF;
+  width: auto;
+  padding: 30px 0 12px 0;
+  border-bottom: 2px solid #ffffff5e;
+  margin-bottom: 18px;
 }
 
 .card-lomejor {
-  width: 18rem; 
-  background-color: #DCE0DF;
+  padding: 16px;
+  box-shadow: 1px 2px 4px #6b6b6b;
 }
 
 .icon-redes {

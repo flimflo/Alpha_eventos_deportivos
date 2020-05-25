@@ -7,43 +7,50 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;600&display=swap" rel="stylesheet">
+
     <link rel="icon" href="./images/Logo_stars.jpg">
 
     <title>Alpha</title>
   </head>
   <body>
       <header>
-          <div class="d-flex justify-content-around logo-stars">
-              <img class="star" src="./images/Star.png" alt="Star">
-              <img class="star" src="./images/Star.png" alt="Star">
-              <img class="star" src="./images/Star.png" alt="Star">
-              <img class="logostar"  src="./images/Logo.jpg" alt="Star">
-              <img class="star" src="./images/Star.png" alt="Star">
-              <img class="star" src="./images/Star.png" alt="Star">
-              <img class="star" src="./images/Star.png" alt="Star">
-          </div>
           <div>
-            <img src="" alt="Torneo Logo Alpha">
-            <!-- aqui va el lohgo del torneo, lo sigo haciendo -->
           </div>
-          <nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Principal</a>
-            <a class="navbar-brand" href="#">Roles</a>
-            <a class="navbar-brand" href="#">Noticias</a>
-            <a class="navbar-brand" href="#">Reglamento</a>
-            <a class="navbar-brand" href="#">Multimedia</a>
-            <a class="navbar-brand" href="#">Sobre nosotros</a>
-            <a class="navbar-brand" href="#">Patrocinadores</a>
-            <form class="form-inline">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top sticky-top">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img class="logostar"  src="./images/Logo.jpg" alt="Star">
+              </a>
+              <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/roles">Roles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/noticias">Noticias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/reglamento">Reglamento</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/media">Multimedia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">Sobre nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/patrocinadores">Patrocinadores</a>
+              </li>
+            </ul>
+            <!-- <form class="form-inline">
               <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
               <button class="btn btn-buscar my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
+            </form> -->
           </nav>
       </header>
-      <main>
-        <!-- endpoint para cambiar las imagenes desde la página de administrador -->
-        <section class="d-flex justify-content-center">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <main id="app">
+        <section class="row w-75 mx-auto mt-5 mb-5">
+          <div id="carouselExampleIndicators" class="col carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -69,16 +76,16 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-        </section>
-        <section class="d-flex justify-content-center">
-          <h2>TABLA GENERAL</h2>
-          <!-- aqui va la tabla general, los resultados se traen desde los datos que sube el administrador -->
+          <div class="col col-lg">
+            <h2 class="text-center">TABLA GENERAL</h2>
+            <leaderboard-table section-id="home"></leaderboard-table>
+          </div>
         </section>
         <section class="sec-lomejor">
-          <h2>Lo mejor del torneo</h2>
+          <h2 class="mx-auto w-75">Lo mejor del torneo</h2>
           <!-- aqui va algunos datos que se obtienen de la tabla general, los resultados se traen desde los datos que sube el administrador -->
-          <div class="d-flex justify-content-around">
-            <div class="card card-lomejor">
+          <div class="row row w-75 mx-auto">
+            <div class="card card-lomejor col mr-3">
               <img src="./images/jugador.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="d-flex justify-content-around card-title">Goleador</h4>
@@ -86,7 +93,7 @@
                 <p class="d-flex justify-content-around  card-text">Ha Anotado: X Goles</p>
               </div>
             </div>
-            <div class="card card-lomejor">
+            <div class="card card-lomejor col mr-3">
               <img src="./images/escudo1.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="d-flex justify-content-around card-title">Ofensiva</h4>
@@ -94,7 +101,7 @@
                 <p class="d-flex justify-content-around  card-text">X Goles a Favor</p>
               </div>
             </div>
-            <div class="card card-lomejor">
+            <div class="card card-lomejor col mr-3">
               <img src="./images/escudo2.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="d-flex justify-content-around card-title">Defensiva</h4>
@@ -102,7 +109,7 @@
                 <p class="d-flex justify-content-around  card-text">Goles en contra: X Goles </p>
               </div>
             </div>
-            <div class="card card-lomejor">
+            <div class="card card-lomejor col">
               <img src="./images/escudo1.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="d-flex justify-content-around card-title">Fair play</h4>
@@ -145,7 +152,7 @@
             <img src="./images/patrocinador/patrocinador3.PNG" alt="Patrocinador 3">
           </div>
         </section>
-        <comment-box id="app" section-id="home"></comment-box>
+        <comment-box section-id="home"></comment-box>
       </main>
       <footer>
       </footer>

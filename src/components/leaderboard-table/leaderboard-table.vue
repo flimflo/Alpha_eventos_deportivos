@@ -1,23 +1,33 @@
-<style>
+<style scoped>
 .card {
   box-shadow: 1px 2px 4px #d2d2d2;
   border-radius: 8px;
   overflow: hidden;
 }
+
+th, td {
+  padding: 8px
+}
+
+.tablerow:nth-child(odd)  {
+  background: #ededed;
+}
+
 </style>
 <template>
 <div id='example-3' class="card">
-  <div>Ha ocurrido un error al cargar la tabla de posiciones</div>
-  <div>Ha ocurrido un error al cargar la tabla de posiciones</div>
+  <div v-if="showError">Ha ocurrido un error al cargar la tabla de posiciones</div>
   <table>
     <thead>
+      <th>Posición</th>
       <th>Equipo</th>
       <th>Goles a Favor</th>
       <th>Goles en Contra</th>
       <th>Puntos</th>
     </thead>
     <tbody>
-      <tr v-for="item in teams" :key="item.index">
+      <tr v-for="(item, index) in teams" :key="index" class="tablerow">
+        <td>{{ index + 1 }}</td>
         <td>{{ item.teamName }}</td>
         <td>{{ item.goals }}</td>
         <td>{{ item.goalsAgainst }}</td>
@@ -42,6 +52,8 @@ export default class extends Vue {
   created() {
     getLeaderboard().then(teams => {
       this.teams = teams
+    }).catch(err => {
+      this.showError = true
     })
   }
 }
