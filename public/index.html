@@ -10,18 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;600&display=swap" rel="stylesheet">
 
     <link rel="icon" href="./images/Logo_stars.jpg">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Alpha</title>
   </head>
   <body>
       <header>
-          <div>
-          </div>
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top sticky-top">
-            <div class="container">
-              <a class="navbar-brand" href="/">
-                <img class="logostar"  src="./images/Logo.jpg" alt="Star">
-              </a>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">
+              <img class="logostar"  src="./images/Logo.jpg" alt="Star">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <a class="nav-link" href="/roles">Roles</a>
@@ -42,14 +43,10 @@
                 <a class="nav-link" href="/patrocinadores">Patrocinadores</a>
               </li>
             </ul>
-            <!-- <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-buscar my-2 my-sm-0" type="submit">Buscar</button>
-            </form> -->
           </nav>
       </header>
       <main id="app">
-        <section class="row w-75 mx-auto mt-5 mb-5">
+        <section class="row mt-5 mb-5 mx-auto container">
           <div id="carouselExampleIndicators" class="col carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -76,25 +73,25 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-          <div class="col col-lg">
+          <div class="col col-md-6">
             <h2 class="text-center">TABLA GENERAL</h2>
             <leaderboard-table section-id="home"></leaderboard-table>
             <comment-box section-id="tabla" class="mt-5"></comment-box>
           </div>
         </section>
         <section class="sec-lomejor">
-          <h2 class="mx-auto w-75">Lo mejor del torneo</h2>
+          <h2 class="mx-auto container">Lo mejor del torneo</h2>
           <!-- aqui va algunos datos que se obtienen de la tabla general, los resultados se traen desde los datos que sube el administrador -->
-          <div class="row row w-75 mx-auto">
-            <div class="card card-lomejor col mr-3">
-              <img src="./images/jugador.jpg" class="card-img-top" alt="...">
+          <div class="row mx-auto container">
+            <div class="card card-lomejor col-md mr-3">
+              <img src="./images/jugador.jpg" class="card-img-top col-md" alt="...">
               <div class="card-body">
                 <h4 class="d-flex justify-content-around card-title">Goleador</h4>
                 <h5 class="d-flex justify-content-around card-title">Fernando Limón FLores</h5>
                 <p class="d-flex justify-content-around  card-text">Ha Anotado: X Goles</p>
               </div>
             </div>
-            <div class="card card-lomejor col mr-3">
+            <div class="card card-lomejor col-md mr-3">
               <img src="./images/escudo1.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="d-flex justify-content-around card-title">Ofensiva</h4>
@@ -102,7 +99,7 @@
                 <p class="d-flex justify-content-around  card-text">X Goles a Favor</p>
               </div>
             </div>
-            <div class="card card-lomejor col mr-3">
+            <div class="card card-lomejor col-md mr-3">
               <img src="./images/escudo2.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="d-flex justify-content-around card-title">Defensiva</h4>
@@ -110,7 +107,7 @@
                 <p class="d-flex justify-content-around  card-text">Goles en contra: X Goles </p>
               </div>
             </div>
-            <div class="card card-lomejor col">
+            <div class="card card-lomejor col-md mr-3">
               <img src="./images/escudo1.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="d-flex justify-content-around card-title">Fair play</h4>
@@ -119,9 +116,12 @@
               </div>
             </div>
           </div>
-          <comment-box section-id="lo-mejor" class="mx-auto w-75 mt-5"></comment-box>
+          <div class="mx-auto mt-5 container">
+            <comment-box section-id="lo-mejor"></comment-box>
+          </div>
+
         </section>
-        <section class="sec-patrocinadores">
+        <!-- <section class="sec-patrocinadores container">
           <h2>
             Conoce a nuestros patrocinadores
           </h2>
@@ -130,10 +130,10 @@
             <img src="./images/patrocinador/patrocinador2.jpeg" alt="Patrocinador 2">
             <img src="./images/patrocinador/patrocinador3.PNG" alt="Patrocinador 3">
           </div>
-        </section>
+        </section> -->
         <comment-box section-id="home"></comment-box>
       </main>
-      <footer>
+      <footer  class="container">
           <h2>
             Siguenos en nuestras redes sociales
           </h2>

@@ -19,10 +19,10 @@ th, td {
   <div v-if="showError">Ha ocurrido un error al cargar la tabla de posiciones</div>
   <table>
     <thead>
-      <th>Posición</th>
+      <th>#</th>
       <th>Equipo</th>
-      <th>Goles a Favor</th>
-      <th>Goles en Contra</th>
+      <th>G+</th>
+      <th>G-</th>
       <th>Puntos</th>
     </thead>
     <tbody>
