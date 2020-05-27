@@ -6,223 +6,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/patrocinadores.css">
     <link rel="icon" href="../images/Logo_stars.jpg">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Alpha</title>
   </head>
   <body>
-      <header>
-          <div class="d-flex justify-content-around logo-stars">
-              <img class="star" src="../images/Star.png" alt="Star">
-              <img class="star" src="../images/Star.png" alt="Star">
-              <img class="star" src="../images/Star.png" alt="Star">
-              <img class="logostar"  src="../images/Logo.jpg" alt="Star">
-              <img class="star" src="../images/Star.png" alt="Star">
-              <img class="star" src="../images/Star.png" alt="Star">
-              <img class="star" src="../images/Star.png" alt="Star">
-          </div>
-          <div>
-            <img src="" alt="Torneo Logo Alpha">
-            <!-- aqui va el lohgo del torneo, lo sigo haciendo -->
-          </div>
-          <nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Principal</a>
-            <a class="navbar-brand" href="#">Roles</a>
-            <a class="navbar-brand" href="#">Noticias</a>
-            <a class="navbar-brand" href="/reglamento">Regladmento</a>
-            <a class="navbar-brand" href="#">Multimedia</a>
-            <a class="navbar-brand" href="#">Sobre nosotros</a>
-            <a class="navbar-brand" href="#">Patrocinadores</a>
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-buscar my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-          </nav>
-      </header>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+          <img class="logostar"  src="./images/Logo.jpg" alt="Star">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/roles">Roles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/noticias">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/reglamento">Reglamento</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/media">Multimedia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">Sobre nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/patrocinadores">Patrocinadores</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
       <main>
-        <section>
-          <h1>
-            Despues de los grandes momentos, <br> quedan inolvidables recuerdos
-          </h1>
-          <h2>
-            Gracias por su confianza
-          </h2>
+        <section class="jumbotron">
+          <div class="container">
+            <h1 class="title-header">
+              Despues de los grandes momentos, <br> quedan inolvidables recuerdos
+            </h1>
+            <h2 class="title-header">
+              Gracias por su confianza
+            </h2>
+          </div>
         </section>
-        <section>
-          <div class="d-flex flex-row">
-            <div class="d-flex flex-row contleft">
-              <div class="d-flex flex-column contwidth">
-                <div class="contheight">
-                  <img class="imgpatro" src="../images/patrocinador/patrocinador1.jpg" alt="EML">
-                </div>
-                <div class="contheight">
-                  <h4>
-                    Contacto
-                  </h4>
-                  <h6>Tel 1: 01 (474) 746 7076</h6>
-                  <h6>Tel 2: 01 (474) 746 7077</h6>
-                  <h6>correo: recepcion@eml.com.mx</h6>
-                </div>
-              </div>
-              <div class="d-flex flex-column contwidth">
-                <div class="contheight">
-                  <h4>Dirección</h4>
-                  <h6>Carr. Lagos-San Juan km 3 S/N</h6>
-                  <h6>Col. Jacales</h6>
-                  <h6>CP: 47470</h6>
-                  <h6>Lagos de Moreno, Jal.</h6>
-                </div>
-                <div class="contheight">
-                  <h4>
-                    Página Web
-                  </h4>
-                  <h6><a href="http://www.eml.com.mx/index.html"> Haz clic aquí</a></h6>
-                </div>
-              </div>
-            </div>
-            <div class="contright">
-              <div id="map"></div>
+        <section class="container card mb-5">
+          <div class="row p-0 row row-col-2">
+            <div class="image-placeholder col" style="background-image: url(../images/patrocinador/patrocinador1.jpg);"></div>
+            <div class="col p-3 text-container">
+              <h4>Contacto</h4>
+              <h6>Tel 1: 01 (474) 746 7076</h6>
+              <h6>Tel 2: 01 (474) 746 7077</h6>
+              <h6>correo: recepcion@eml.com.mx</h6>
+              <h4>Dirección</h4>
+              <h6>Carr. Lagos-San Juan km 3 S/N</h6>
+              <h6>Col. Jacales</h6>
+              <h6>CP: 47470</h6>
+              <h6>Lagos de Moreno, Jal.</h6>
             </div>
           </div>
         </section>
-        <section>
-          <div class="d-flex flex-row">
-            <div class="contright">
-              <div id="map1"></div>
-            </div>
-            <div class="d-flex flex-row contleft">
-              <div class="d-flex flex-column contwidth">
-                <div class="contheight" style="background-image: url(./images/patrocinador/patrocinador2.jpeg); background-size: cover;">
-                  <h4>Dirección</h4>
-                  <h6>Calle Canal #390</h6>
-                  <h6>Col. Granadillas</h6>
-                  <h6>CP: 47433</h6>
-                  <h6>Lagos de Moreno, Jal.</h6>
-                </div>
-                <div class="contheight">
-                  <h4>Contacto</h4>
-                  <h6>Tel: 01 (474) 742 8199</h6>
-                </div>
-              </div>
-              <div class="d-flex flex-column contwidth">
-                <div class="contheight">
-                  <img class="imgpatro" src="../images/patrocinador/patrocinador2.jpg" alt="KIKAPU">
-                </div>
-                <div class="contheight">
-                  <h4>
-                    Página Web
-                  </h4>
-                  <h6><a href="https://www.facebook.com/Kikapu-Parque-Acu%C3%A1tico-391817682941/"> Haz clic aquí</a></h6>
-                </div>
-              </div>
+        <section class="container card mb-5">
+          <div class="row p-0 row row-col-2">
+            <div class="image-placeholder col" style="background-image: url(../images/patrocinador/patrocinador2.jpg);"></div>
+            <div class="col p-3 text-container">
+              <h4>Dirección</h4>
+              <h6>Calle Canal #390</h6>
+              <h6>Col. Granadillas</h6>
+              <h6>CP: 47433</h6>
+              <h6>Lagos de Moreno, Jal.</h6>
+              <h4>Contacto</h4>
+              <h6>Tel: 01 (474) 742 8199</h6>
             </div>
           </div>
+          <!-- <div id="map2" class="map flex-fill"></div> -->
         </section>
-        <section>
-          <div class="d-flex flex-row">
-            <div class="d-flex flex-row contleft">
-              <div class="d-flex flex-column contwidth">
-                <div class="contheight">
-                  <img class="imgpatro" src="../images/patrocinador/patrocinador3.jpg" alt="FisioMotion">
-                </div>
-                <div class="contheight">
-                  <h4>
-                    Contacto
-                  </h4>
-                  <h6>Tel: 01 (474) 738 8716</h6>
-                </div>
-              </div>
-              <div class="d-flex flex-column contwidth">
-                <div class="contheight">
-                  <h4>Dirección</h4>
-                  <h6>Emiliano Zapata #325 A</h6>
-                  <h6>Col. Centro</h6>
-                  <h6>CP: 47400</h6>
-                  <h6>Lagos de Moreno, Jal.</h6>
-                </div>
-                <div class="contheight">
-                  <h4>
-                    Página Web
-                  </h4>
-                  <h6><a href="https://www.facebook.com/FisioMotionn"> Haz clic aquí</a></h6>
-                </div>
-              </div>
-            </div>
-            <div class="contright">
-              <div id="map2"></div>
+        <section class="container card mb-5">
+          <div class="row p-0 row row-col-2">
+            <div class="image-placeholder col" style="background-image: url(../images/patrocinador/patrocinador3.jpg);"></div>
+            <div class="col p-3 text-container">
+              <h4>Contacto</h4>
+              <h6>Tel: 01 (474) 738 8716</h6>
+              <h4>Dirección</h4>
+              <h6>Emiliano Zapata #325 A</h6>
+              <h6>Col. Centro</h6>
+              <h6>CP: 47400</h6>
+              <h6>Lagos de Moreno, Jal.</h6>
             </div>
           </div>
+          <!-- <div id="map3" class="map flex-fill"></div> -->
         </section>
-        <section>
-          <div class="d-flex flex-row">
-            <div class="contright">
-              <div id="map3"></div>
-            </div>
-            <div class="d-flex flex-row contleft">
-              <div class="d-flex flex-column contwidth">
-                <div class="contheight" style="background-image: url(./images/patrocinador/patrocinador2.jpeg); background-size: cover;">
-                  <h4>Dirección</h4>
-                  <h6>Calle Francisco I.Madero #484 timbre 4</h6>
-                  <h6>Col. Centro</h6>
-                  <h6>CP: 47400</h6>
-                  <h6>Lagos de Moreno, Jal.</h6>
-                </div>
-                <div class="contheight">
-                  <h4>Contacto</h4>
-                  <h6>Tel: 474 108 2758</h6>
-                </div>
-              </div>
-              <div class="d-flex flex-column contwidth">
-                <div class="contheight">
-                  <img class="imgpatro" src="../images/patrocinador/patrocinador4.jpg" alt="KIKAPU">
-                </div>
-                <div class="contheight">
-                  <h4>
-                    Página Web
-                  </h4>
-                  <h6><a href="https://www.facebook.com/Nutrisana-Nutrici%C3%B3n-y-Vida-Sana-1692013481117143/"> Haz clic aquí</a></h6>
-                </div>
-              </div>
+        <section class="container card mb-5">
+          <div class="row p-0 row row-col-2">
+            <div class="image-placeholder col" style="background-image: url(../images/patrocinador/patrocinador4.jpg);"></div>
+            <div class="col p-3 text-container">
+                <h4>Dirección</h4>
+                <h6>Calle Francisco I.Madero #484 timbre 4</h6>
+                <h6>Col. Centro</h6>
+                <h6>CP: 47400</h6>
+                <h6>Lagos de Moreno, Jal.</h6>
+                <h4>Contacto</h4>
+                <h6>Tel: 474 108 2758</h6>
             </div>
           </div>
+          <!-- <div id="map3" class="map flex-fill"></div> -->
         </section>
-        <section>
-          <div class="d-flex flex-row">
-            <div class="d-flex flex-row contleft">
-              <div class="d-flex flex-column contwidth">
-                <div class="contheight">
-                  <img class="imgpatro" src="../images/patrocinador/patrocinador5.PNG" alt="EML">
-                </div>
-                <div class="contheight">
-                  <h4>
-                    Contacto
-                  </h4>
-                  <h6>Tel: 01 (474) 742 4536</h6>
-                  <h6>correo: ventas@sicc-bajio.com</h6>
-                </div>
-              </div>
-              <div class="d-flex flex-column contwidth">
-                <div class="contheight">
-                  <h4>Dirección</h4>
-                  <h6>Calle Limón #48</h6>
-                  <h6>Col. Huertos Familiares San Pedro</h6>
-                  <h6>CP: 47472</h6>
-                  <h6>Lagos de Moreno, Jal.</h6>
-                </div>
-                <div class="contheight">
-                  <h4>
-                    Horario
-                  </h4>
-                  <h6>Lun-Vie: 8:00 a 17:00</h6>
-                  <h6>Sab: 8:00 a 14:00</h6>
-                </div>
-              </div>
-            </div>
-            <div class="contright">
-              <div id="map4"></div>
+        <section class="container card mb-5">
+          <div class="row p-0 row row-col-2">
+            <div class="image-placeholder col" style="background-image: url(../images/patrocinador/patrocinador5.png);"></div>
+            <div class="col p-3 text-container">
+              <h4>Contacto</h4>
+              <h6>Tel: 01 (474) 742 4536</h6>
+              <h6>correo: ventas@sicc-bajio.com</h6>
+              <h4>Dirección</h4>
+              <h6>Calle Limón #48</h6>
+              <h6>Col. Huertos Familiares San Pedro</h6>
+              <h6>CP: 47472</h6>
+              <h6>Lagos de Moreno, Jal.</h6>
+              <h4>Horario</h4>
+              <h6>Lun-Vie: 8:00 a 17:00</h6>
+              <h6>Sab: 8:00 a 14:00</h6>
             </div>
           </div>
+          <!-- <div id="map3" class="map flex-fill"></div> -->
         </section>
       </main>
 
