@@ -2,13 +2,15 @@ import { RouteConfig } from 'vue-router';
 import {
   Auth,
   CommentReviewer,
-  LeaderboardTable
+  LeaderboardTable,
+  NoticePublisher,
 } from '../sections';
 
 export function getRouterConfig() {
   const authenticatedRoutes: RouteConfig[] = [
     { path: '/comments', component: CommentReviewer },
-    { path: '/leaderboard', component: LeaderboardTable }
+    { path: '/leaderboard', component: LeaderboardTable },
+    { path: '/news', component: NoticePublisher },
   ]
   const noAuthRoutes: RouteConfig[] = [
     { path: '/auth', component: Auth }

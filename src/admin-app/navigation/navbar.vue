@@ -6,6 +6,7 @@
 <div class="card">
   <router-link to="/comments">Revisar comentarios</router-link>
   <router-link to="/leaderboard">Tabla de posiciones</router-link>
+  <router-link to="/news">News</router-link>
   <button v-on:click="logout">logout</button>
 </div>
 </template>
