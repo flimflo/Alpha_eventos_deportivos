@@ -4,6 +4,7 @@ import {
   CommentReviewer,
   LeaderboardTable,
   NoticePublisher,
+  RolesPublsiher,
 } from '../sections';
 
 export function getRouterConfig() {
@@ -11,6 +12,7 @@ export function getRouterConfig() {
     { path: '/comments', component: CommentReviewer },
     { path: '/leaderboard', component: LeaderboardTable },
     { path: '/news', component: NoticePublisher },
+    { path: '/roles', component: RolesPublsiher },
   ]
   const noAuthRoutes: RouteConfig[] = [
     { path: '/auth', component: Auth }

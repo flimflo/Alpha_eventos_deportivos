@@ -15,6 +15,9 @@
       <li class="nav-item">
         <router-link class="nav-link" to="/news">Noticias</router-link>
       </li>
+      <li class="nav-item">
+        <router-link class="nav-link" to="/roles">Roles</router-link>
+      </li>
     </ul>
     <button class="btn btn-outline-success" v-on:click="logout">logout</button>
   </nav>
