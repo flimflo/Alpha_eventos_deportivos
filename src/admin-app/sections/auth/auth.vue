@@ -3,10 +3,22 @@
   padding: 8px;
 }
 
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card {
   box-shadow: 1px 2px 4px #d2d2d2;
   border-radius: 8px;
   overflow: hidden;
+  min-width: 500px;
+  padding: 20px;
 }
 
 input {
@@ -16,25 +28,24 @@ input {
   border-radius: 2px;
   margin: 10px 0;
   flex-grow: 1;
+  width: 100%;
 }
 
-button {
-  padding: 8px;
-  border: none;
-  background-color: red;
-  width: 100px;
-}
 </style>
 
 <template>
-<div class="card">
-  <form v-on:submit.prevent="login">
-    <input v-model="email" placeholder="Email">
-    <input v-model="password" placeholder="Password">
-    <span v-if="error">error</span>
-    <span v-if="loading">cargando</span>
-    <button>Login</button>
-  </form>
+<div class="container">
+  <div class="card">
+    <form v-on:submit.prevent="login">
+      <label for="Email">Email address</label>
+      <input v-model="email" placeholder="Email" class="form-control">
+      <label for="Password">Password</label>
+      <input v-model="password" placeholder="Password" class="form-control" type="password">
+      <span v-if="error">error</span>
+      <span v-if="loading">cargando</span>
+      <button class="d-block ml-auto btn btn-outline-primary">Login</button>
+    </form>
+  </div>
 </div>
 </template>
 

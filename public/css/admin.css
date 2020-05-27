@@ -1,6 +1,7 @@
 body {
-  margin: 0;
-  background-color: #607d8b;
+  box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 #app {
