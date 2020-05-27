@@ -93,11 +93,20 @@
                           <p class="text-center">
                             AlpHa Eventos Deportivos nace en la mente de un joven estudiante de Cultura Física y Deporte tratando de resolver problemáticas sociales, como la drogadicción, la creación de pandillas y la violencia en colonias marginadas del municipio de Lagos de Moreno, con este objetivo se asocia con el Sr Néstor iniciador de la liga, una vez aprendida la manera de administrar el torneo, su creador el Sr Néstor decide retirarse dejando a su hijo y a Jose Horacio Vega Mares, al terminar ese torneo, el estudiante de CUFIDE comienza a emprender una copa de verano para que al concluir este evento, iniciar con el primer torneo  oficialmente administrado por  AlpHa Eventos Deportivos en octubre del 2019.
                           </p>
-                          <div class="w-50 p-3 text-center mx-auto d-block">
-                            <img class="img-thumbnail img-fluid" src="./images/presidente.jpg" alt="Presidente">
+                          <div class="d-flex flex-row align-items-center">
+                            <div class="contleft w-25 h-50 p-3 text-center mx-auto d-block" id="foto">
+                              <img class="img-thumbnail img-fluid" src="./images/presidente.jpg" alt="Presidente">
+                              <h5>Presidente de Liga</h5>
+                              <h6>José Horacio Vega Mares</h6>
+                            </div>
+                            <div class="contright w-50 p-3 text-center mx-auto d-block" id="hideMap">
+                              <div id="map"></div>
+                              <h5>KIKAPU Soccer</h5>
+                              <h6>Calle Canal #390</h6>
+                              <h6>Col. Granadillas</h6>
+                              <h6>Lagos de Moreno, Jal.</h6>
+                            </div>
                           </div>
-                          <h5>Presidente de Liga</h5>
-                          <h6>José Horacio Vega Mares</h6>
                         </div>
                       </div>
                     </div>
@@ -106,8 +115,21 @@
         </div>
       </main>
   </body>
-        
-        
+
+  <script>
+     function initMap() {
+          var uluru = {lat: 21.3824948, lng: -101.901171};
+          
+          var map = new google.maps.Map(
+              document.getElementById('map'), {zoom: 17, center: uluru});
+         
+          var marker = new google.maps.Marker({position: uluru, map: map});
+     }
+  </script>
+      
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAevwrAodBPUwHQCJ5AQyg8iSnnnNvLFSE&callback=initMap">
+  </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

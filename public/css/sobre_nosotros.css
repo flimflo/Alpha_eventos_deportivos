@@ -19,3 +19,44 @@ h2, h1, h5 {
 h6 {
   text-align: center;
 }
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+.contleft, .contright{
+  width: 50%;
+}
+
+.contright {
+  padding: 40px;
+}
+
+@media (min-width: 300px){
+  #hideMap {
+    display: none !important;
+  }
+  #foto{
+    width: 60% !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 990px){
+  #hideMap {
+    display: none !important;
+  }
+  #foto{
+    width: 40% !important;
+  }
+}
+
+@media (min-width:991px){
+  #hideMap {
+    display: block !important;
+  }
+  #foto{
+    width: 25% !important;
+  }
+}
