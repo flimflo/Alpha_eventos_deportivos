@@ -4,3 +4,9 @@ export type NewsArticle = {
   content: string,
   date: string,
 }
+
+export type Card = {
+  title: string
+  image_url: string
+  subtitle: string
+}

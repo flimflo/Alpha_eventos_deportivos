@@ -5,6 +5,7 @@ import {
   LeaderboardTable,
   NoticePublisher,
   RolesPublsiher,
+  BestOfLeague,
 } from '../sections';
 
 export function getRouterConfig() {
@@ -13,6 +14,7 @@ export function getRouterConfig() {
     { path: '/leaderboard', component: LeaderboardTable },
     { path: '/news', component: NoticePublisher },
     { path: '/roles', component: RolesPublsiher },
+    { path: '/best-of-league', component: BestOfLeague },
   ]
   const noAuthRoutes: RouteConfig[] = [
     { path: '/auth', component: Auth }
