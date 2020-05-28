@@ -21,6 +21,9 @@
       <li class="nav-item">
         <router-link class="nav-link" to="/best-of-league">Lo mejor de la liga</router-link>
       </li>
+      <li class="nav-item">
+        <router-link class="nav-link" to="/media">Media</router-link>
+      </li>
     </ul>
     <button class="btn btn-outline-success" v-on:click="logout">logout</button>
   </nav>

@@ -34,31 +34,32 @@ span {
 </style>
 <template>
 <div>
-  <div v-if="showError">Ha ocurrido un error al cargar las noticias</div>
-  <div v-for="(article, index) in articles" :key="index" class="card">
-    <h1>{{ article.title }}</h1>
-    <span>{{ article.date }}</span>
-    <img v-bind:src="article.image_url">
-    <p>{{ article.content }}</p>
+  <div v-if="showError">Ha ocurrido un error al cargar las fotos</div>
+  <div v-for="(media, index) in mediaPhotos" :key="index" class="card">
+    <h1>{{ media.title }}</h1>
+    <span>{{ media.date }}</span>
+    <img v-bind:src="media.image_url">
+    <p>{{ media.content }}</p>
   </div>
 </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { getNews } from '../../api'
-import { NewsArticle } from '../../models/NewsArticle'
+import { getMediaPhoto } from '../../api'
+import { Media } from '../../models/Media'
 
 
 @Component
 export default class extends Vue {
-  articles: NewsArticle[] = []
+  mediaPhotos: Media[] = []
   showError = false
   showLoading = false
 
   created() {
-    getNews().then(articles => {
-      this.articles = articles
+    getMediaPhoto().then(mediaPhotos => {
+      console.log(mediaPhotos);
+      this.mediaPhotos = mediaPhotos
     }).catch(err => {
       this.showError = true
     })

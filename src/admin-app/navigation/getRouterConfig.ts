@@ -6,6 +6,7 @@ import {
   NoticePublisher,
   RolesPublsiher,
   BestOfLeague,
+  MediaPublisher,
 } from '../sections';
 
 export function getRouterConfig() {
@@ -15,6 +16,7 @@ export function getRouterConfig() {
     { path: '/news', component: NoticePublisher },
     { path: '/roles', component: RolesPublsiher },
     { path: '/best-of-league', component: BestOfLeague },
+    { path: '/media',component: MediaPublisher},
   ]
   const noAuthRoutes: RouteConfig[] = [
     { path: '/auth', component: Auth }
