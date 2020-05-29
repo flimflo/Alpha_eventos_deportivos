@@ -6,10 +6,10 @@
 .card {
   background-color: #FFFFFF;
   max-width: 800px;
-  margin: 32px 24px;
   box-shadow: 1px 2px 4px #383838;
   border-radius: 2px;
   overflow: hidden;
+  padding: 0;
 }
 
 input {
@@ -80,7 +80,7 @@ button {
 </style>
 
 <template>
-<div class="card">
+<div class="card container">
   <div id="modal-overlay"  v-if="showApproveToolbar">
        <div id="modal">
           <p>deseas aprobar este comentario?</p>
