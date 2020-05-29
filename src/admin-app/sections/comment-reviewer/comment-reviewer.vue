@@ -129,12 +129,12 @@ export default class extends Vue implements CommentReviewerUiState, Data {
   showApproveToolbar = false
   showApproveSuccess = false
 
-  sections = ["home", "tabla", "lo-mejor"]
+  sections = ["tabla", "lo-mejor","noticias","media","reglamento","sobre-nosotros","patrocinadores"]
   selectedSection = ""
 
   created() {
     this.vm.uiState.subscribe(uiState => Object.assign(this, uiState))
-    this.selectedSection = "home"
+    this.selectedSection = "tabla"
   }
 
   @Watch("selectedSection")

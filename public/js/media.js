@@ -1,7 +1,3 @@
-
-
-
-
 function photobt(){
 
     let photobtn = document.querySelector("#photoid");
