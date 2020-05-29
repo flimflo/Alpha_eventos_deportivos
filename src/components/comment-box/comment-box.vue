@@ -6,7 +6,6 @@
 form {
   display: flex;
   border: 1px solid #d2d0d0;
-  width: 500px;
   border-radius: 8px;
   height: 40px;
   overflow: hidden;
@@ -39,7 +38,8 @@ input {
 button {
   padding: 8px;
   border: none;
-  background-color: red;
+  color: #000000;
+  background-color: white;
   width: 100px;
 }
 </style>
@@ -47,6 +47,7 @@ button {
 <template>
 <div class="card">
   <h3 id="header">Comentarios</h3>
+  <div v-if="showSuccess" class="alert alert-success" role="alert">Comentario esperando aprobación</div>
   <form v-on:submit.prevent="submit">
     <input v-model="message" placeholder="Nuevo Comentario">
     <button>Enviar</button>
@@ -69,7 +70,8 @@ export default {
   data: function () {
     return {
       comments: [],
-      message: ""
+      message: "",
+      showSuccess: false,
     }
   },
   created: function() {
@@ -81,7 +83,9 @@ export default {
   },
   methods: {
     submit: function() {
-      this.commentStore.postComment(this.message)
+      this.commentStore.postComment(this.message).then(() => {
+        this.showSuccess = true
+      })
     },
   },
 }
